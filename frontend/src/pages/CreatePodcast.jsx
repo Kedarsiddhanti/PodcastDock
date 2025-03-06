@@ -128,7 +128,7 @@ function CreatePodcast() {
   };
 
   return (
-    <div className="p-8 bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center">
+    <div className="p-8 bg-background text-text min-h-screen flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-8">Create Podcast</h1>
       <div className="space-y-6 w-full max-w-2xl"> {/* Increased max width */}
         <div>
@@ -185,7 +185,7 @@ function CreatePodcast() {
           />
           <button
             onClick={handleTTSConversion}
-            className="mt-2 px-4 py-2 bg-blue-600 text-gray-100 rounded-lg hover:bg-blue-500"
+            className="mt-2 px-4 py-2 bg-primary text-gray-100 rounded-lg hover:bg-secondary"
             disabled={isGeneratingAudio}
           >
             {isGeneratingAudio ? 'Generating Audio...' : 'Generate Audio'}
@@ -253,21 +253,21 @@ function CreatePodcast() {
             />
             <button
               onClick={handleImageGeneration}
-              className="mt-2 px-4 py-2 bg-blue-600 text-gray-100 rounded-lg hover:bg-blue-500"
+              className="mt-2 px-4 py-2 bg-primary text-gray-100 rounded-lg hover:bg-secondary"
               disabled={isGeneratingImage}
             >
               {isGeneratingImage ? 'Generating Image...' : 'Generate Image'}
             </button>
-            {generatedImageUrl && (
-              <div className="mt-4">
-                <img src={generatedImageUrl} alt="Generated Cover" className="w-full h-48 object-cover rounded" />
-              </div>
-            )}
+          </div>
+        )}
+        {generatedImageUrl && (
+          <div className="mt-4">
+            <img src={generatedImageUrl} alt="Generated Cover" className="w-full h-48 object-cover rounded" />
           </div>
         )}
         <button
           onClick={handleCreatePodcast}
-          className="w-full py-3 bg-green-600 text-gray-100 rounded-lg hover:bg-green-500"
+          className="w-full py-3 bg-primary text-gray-100 rounded-lg hover:bg-secondary"
         >
           Create Podcast
         </button>

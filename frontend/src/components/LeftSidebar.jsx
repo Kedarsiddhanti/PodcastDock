@@ -3,12 +3,12 @@ import { FaHome, FaLeaf, FaMicrophone, FaUser } from 'react-icons/fa';
 
 function LeftSidebar() {
   return (
-    <aside className="bg-gray-900 text-gray-400 w-56 h-full p-4 flex flex-col fixed left-0 top-12">
+    <aside className="bg-background text-text w-56 h-full p-4 flex flex-col fixed left-0 top-12">
       <NavLink
         to="/"
         className={({ isActive }) =>
           `flex items-center p-2 mb-4 rounded ${
-            isActive ? 'bg-gray-700 text-white' : 'hover:bg-gray-800'
+            isActive ? 'bg-gray-700 text-white' : 'hover:bg-gray-600'
           }`
         }
       >
@@ -19,7 +19,7 @@ function LeftSidebar() {
         to="/discover"
         className={({ isActive }) =>
           `flex items-center p-2 mb-4 rounded ${
-            isActive ? 'bg-gray-700 text-white' : 'hover:bg-gray-800'
+            isActive ? 'bg-gray-700 text-white' : 'hover:bg-gray-600'
           }`
         }
       >
@@ -30,7 +30,7 @@ function LeftSidebar() {
         to="/createpodcast"
         className={({ isActive }) =>
           `flex items-center p-2 mb-4 rounded ${
-            isActive ? 'bg-gray-700 text-white' : 'hover:bg-gray-800'
+            isActive ? 'bg-gray-700 text-white' : 'hover:bg-gray-600'
           }`
         }
       >
@@ -41,7 +41,7 @@ function LeftSidebar() {
         to="/myprofile"
         className={({ isActive }) =>
           `flex items-center p-2 mb-4 rounded ${
-            isActive ? 'bg-gray-700 text-white' : 'hover:bg-gray-800'
+            isActive ? 'bg-gray-700 text-white' : 'hover:bg-gray-600'
           }`
         }
       >

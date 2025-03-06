@@ -1,9 +1,9 @@
-import { FaSearch, FaPlay } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import NoResultsFound from '../components/NoResultsFound';
 import CustomAudioPlayer from '../components/AudioPlayer';
+import PodcastCard from '../components/PodcastCard';
 
 function Discover() {
   const [podcasts, setPodcasts] = useState([]);
@@ -52,19 +52,7 @@ function Discover() {
       {filteredPodcasts.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredPodcasts.map(podcast => (
-            <div key={podcast._id} className="bg-gray-800 p-4 rounded-lg shadow">
-              <Link to={`/podcast/${podcast._id}`}>
-                <img src={podcast.coverImageUrl} alt={podcast.title} className="w-full h-48 object-cover rounded mb-2" />
-                <h3 className="text-lg font-bold">{podcast.title}</h3>
-                <p className="text-sm text-gray-400">{podcast.podcaster}</p>
-              </Link>
-              <button
-                className="mt-2 px-4 py-2 bg-blue-600 text-gray-100 rounded-lg hover:bg-blue-500 flex items-center"
-                onClick={() => handlePlay(podcast.audioUrl)}
-              >
-                <FaPlay className="mr-2" /> Play
-              </button>
-            </div>
+            <PodcastCard key={podcast._id} podcast={podcast} handlePlay={handlePlay} />
           ))}
         </div>
       ) : (
