@@ -1,3 +1,4 @@
+//routes
 const express = require('express');
 const { check } = require('express-validator');
 const { register, login, dashboard } = require('../controllers/authController');
